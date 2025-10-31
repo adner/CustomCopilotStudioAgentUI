@@ -15,7 +15,7 @@
     padding: 1.5rem;
     
     /* Enhanced border and drop shadow */
-    border: 1px solid rgba(0, 255, 65, 0.1);
+    border: 1px solid rgba(255, 105, 180, 0.1);
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.4),
         0 4px 16px rgba(0, 0, 0, 0.3),
@@ -33,7 +33,7 @@
     
     /* Custom scrollbar styling */
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 255, 65, 0.3) rgba(0, 0, 0, 0.1);
+    scrollbar-color: rgba(255, 105, 180, 0.3) rgba(0, 0, 0, 0.1);
 }
 
 /* Webkit scrollbar styling for better browsers */
@@ -48,16 +48,16 @@
 
 .message-list-container::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, 
-        rgba(0, 255, 65, 0.4) 0%, 
-        rgba(0, 255, 65, 0.2) 100%);
+        rgba(255, 105, 180, 0.4) 0%, 
+        rgba(255, 105, 180, 0.2) 100%);
     border-radius: 4px;
-    border: 1px solid rgba(0, 255, 65, 0.1);
+    border: 1px solid rgba(255, 105, 180, 0.1);
 }
 
 .message-list-container::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, 
-        rgba(0, 255, 65, 0.6) 0%, 
-        rgba(0, 255, 65, 0.4) 100%);
+        rgba(248, 3, 215, 0.8) 0%, 
+        rgba(248, 3, 215, 0.8) 100%);
 }
 
 .message-list {
@@ -80,18 +80,18 @@
     margin-top: calc(40vh - 18rem);
     
     /* Apply futuristic styling directly to the container */
-    font-family: 'Orbitron', 'Exo 2', 'Rajdhani', 'Share Tech Mono', 'Courier New', monospace;
+    font-family: 'Orbitron', 'Exo 2', 'Rajdhani', 'Share Tech Mono', 'Segoe UI', monospace;
     font-weight: bold;
     font-size: 2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     
     /* Futuristic glow effect */
-    color: #00ff41;
+    color: #FFC0CB;
     text-shadow: 
-        0 0 10px rgba(0, 255, 65, 0.8),
-        0 0 20px rgba(0, 255, 65, 0.6),
-        0 0 30px rgba(0, 255, 65, 0.4),
+        0 0 10px rgba(248, 3, 215, 0.8),
+        0 0 20px rgba(161, 2, 140, 0.8),
+        0 0 30px rgba(248, 3, 215, 0.349),
         0 2px 4px rgba(0, 0, 0, 0.3);
     
     /* Subtle animation */
@@ -101,16 +101,16 @@
 @keyframes titlePulse {
     0% {
         text-shadow: 
-            0 0 10px rgba(0, 255, 65, 0.8),
-            0 0 20px rgba(0, 255, 65, 0.6),
-            0 0 30px rgba(0, 255, 65, 0.4),
+            0 0 10px rgba(248, 3, 215, 0.8),
+            0 0 20px rgba(161, 2, 140, 0.8),
+            0 0 30px rgba(248, 3, 215, 0.349),
             0 2px 4px rgba(0, 0, 0, 0.3);
     }
     100% {
         text-shadow: 
-            0 0 15px rgba(0, 255, 65, 1),
-            0 0 30px rgba(0, 255, 65, 0.8),
-            0 0 45px rgba(0, 255, 65, 0.6),
+            0 0 15px rgba(248, 3, 215, 0.8),
+            0 0 30px rgba(161, 2, 140, 0.8),
+            0 0 45px rgba(248, 3, 215, 0.349),
             0 2px 4px rgba(0, 0, 0, 0.3);
     }
 }
@@ -122,8 +122,8 @@
 }
 
 .welcome-image img {
-    max-width: 500px;
-    width: 100%;
+    max-width: 400px;
+    width: 80%;
     height: auto;
     opacity: 0.8;
     transition: all 0.8s ease-out;

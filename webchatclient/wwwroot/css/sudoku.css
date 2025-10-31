@@ -2,10 +2,10 @@
     margin: 1rem 0;
     padding: 1.5rem;
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-    border: 1px solid #00ff41;
+    border: 1px solid #FFC0CB;
     border-radius: 12px;
     box-shadow: 
-        0 0 25px rgba(0, 255, 65, 0.4),
+        0 0 25px rgba(255, 105, 180, 0.4),
         0 6px 20px rgba(0, 0, 0, 0.5),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     animation: matrixPulse 4s ease-in-out infinite;
@@ -19,7 +19,7 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #00ff41, #00aa2e, #00ff41, #00aa2e);
+    background: linear-gradient(45deg, #FFC0CB, #FF1493, #FFC0CB, #FF1493);
     background-size: 400% 400%;
     border-radius: 14px;
     z-index: -1;
@@ -28,12 +28,12 @@
 
 .sudoku-title {
     text-align: center;
-    color: #00ff41;
-    font-family: 'Courier New', monospace;
+    color: #FFC0CB;
+    font-family: 'Segoe UI', monospace;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 15px rgba(0, 255, 65, 0.8);
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -42,12 +42,12 @@
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     gap: 1px;
-    background-color: #00ff41;
-    border: 3px solid #00ff41;
+    background-color: #FFC0CB;
+    border: 3px solid #FFC0CB;
     border-radius: 8px;
     margin: 0 auto 1.5rem auto;
     max-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
 }
 
 .sudoku-cell {
@@ -56,7 +56,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Courier New', monospace;
+    font-family: 'Segoe UI', monospace;
     font-size: 1.2rem;
     font-weight: 600;
     color: #ffffff;
@@ -68,9 +68,9 @@
 
 .sudoku-cell.given {
     background-color: #2d2d4a;
-    color: #00ff41;
+    color: #FFC0CB;
     cursor: default;
-    text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.6);
 }
 
 .sudoku-cell.user-input {
@@ -80,9 +80,9 @@
 }
 
 .sudoku-cell.selected {
-    background-color: #2a4a2a !important;
-    box-shadow: inset 0 0 15px rgba(0, 255, 65, 0.5);
-    border: 2px solid #00ff41 !important;
+    background-color: #2a2a4a !important;
+    box-shadow: inset 0 0 15px rgba(255, 105, 180, 0.5);
+    border: 2px solid #FFC0CB !important;
     animation: selectedPulse 1.5s ease-in-out infinite;
 }
 
@@ -95,14 +95,14 @@
 
 .sudoku-cell:hover:not(.given) {
     background-color: #252545;
-    box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.3);
+    box-shadow: inset 0 0 10px rgba(255, 105, 180, 0.3);
 }
 
 /* 3x3 box borders */
-.sudoku-cell.top-border { border-top: 2px solid #00ff41; }
-.sudoku-cell.left-border { border-left: 2px solid #00ff41; }
-.sudoku-cell.bottom-border { border-bottom: 2px solid #00ff41; }
-.sudoku-cell.right-border { border-right: 2px solid #00ff41; }
+.sudoku-cell.top-border { border-top: 2px solid #FFC0CB; }
+.sudoku-cell.left-border { border-left: 2px solid #FFC0CB; }
+.sudoku-cell.bottom-border { border-bottom: 2px solid #FFC0CB; }
+.sudoku-cell.right-border { border-right: 2px solid #FFC0CB; }
 
 .sudoku-controls {
     display: flex;
@@ -121,16 +121,16 @@
 .number-btn, .clear-btn {
     padding: 0.75rem;
     background: linear-gradient(135deg, #1a1a3e 0%, #2d2d4a 50%, #1a1a3e 100%);
-    border: 1px solid #00ff41;
+    border: 1px solid #FFC0CB;
     border-radius: 6px;
-    color: #00ff41;
-    font-family: 'Courier New', monospace;
+    color: #FFC0CB;
+    font-family: 'Segoe UI', monospace;
     font-weight: 600;
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -146,14 +146,14 @@
 
 .number-btn:hover, .clear-btn:hover {
     background: linear-gradient(135deg, #2d2d4a 0%, #3a3a5a 50%, #2d2d4a 100%);
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
     transform: translateY(-2px);
-    border-color: #44ff66;
+    border-color: #FF69B4;
 }
 
 .number-btn:active, .clear-btn:active {
     transform: translateY(0);
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.7);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
 }
 
 .action-buttons {
@@ -164,38 +164,38 @@
 
 .action-btn {
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, #0f2f0f 0%, #1a3e1a 50%, #0f2f0f 100%);
-    border: 1px solid #00ff41;
+    background: linear-gradient(135deg, #2f0f3f 0%, #3e1a5e 50%, #2f0f3f 100%);
+    border: 1px solid #FFC0CB;
     border-radius: 6px;
-    color: #00ff41;
-    font-family: 'Courier New', monospace;
+    color: #FFC0CB;
+    font-family: 'Segoe UI', monospace;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
 }
 
 .action-btn:hover {
-    background: linear-gradient(135deg, #1a3e1a 0%, #2d4a2d 50%, #1a3e1a 100%);
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+    background: linear-gradient(135deg, #3e1a5e 0%, #4a2d6a 50%, #3e1a5e 100%);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
     transform: translateY(-2px);
-    border-color: #44ff66;
+    border-color: #FF69B4;
 }
 
 .action-btn:active {
     transform: translateY(0);
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.7);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
 }
 
 .sudoku-message {
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 6px;
-    font-family: 'Courier New', monospace;
+    font-family: 'Segoe UI', monospace;
     font-weight: 600;
     text-align: center;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
@@ -203,10 +203,10 @@
 }
 
 .sudoku-message.success {
-    background: linear-gradient(135deg, #0f3f0f 0%, #1a5a1a 50%, #0f3f0f 100%);
-    border: 1px solid #44ff44;
-    color: #44ff44;
-    box-shadow: 0 0 20px rgba(68, 255, 68, 0.4);
+    background: linear-gradient(135deg, #3f0f2f 0%, #5a1a3e 50%, #3f0f2f 100%);
+    border: 1px solid #FF69B4;
+    color: #FF69B4;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
 }
 
 .sudoku-message.error {
@@ -227,13 +227,13 @@
 @keyframes matrixPulse {
     0%, 100% {
         box-shadow: 
-            0 0 25px rgba(0, 255, 65, 0.4),
+            0 0 25px rgba(255, 105, 180, 0.4),
             0 6px 20px rgba(0, 0, 0, 0.5),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
     50% {
         box-shadow: 
-            0 0 35px rgba(0, 255, 65, 0.6),
+            0 0 35px rgba(255, 105, 180, 0.6),
             0 8px 25px rgba(0, 0, 0, 0.6),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
@@ -246,10 +246,10 @@
 
 @keyframes selectedPulse {
     0%, 100% {
-        box-shadow: inset 0 0 15px rgba(0, 255, 65, 0.5);
+        box-shadow: inset 0 0 15px rgba(255, 105, 180, 0.5);
     }
     50% {
-        box-shadow: inset 0 0 25px rgba(0, 255, 65, 0.8);
+        box-shadow: inset 0 0 25px rgba(255, 105, 180, 0.8);
     }
 }
 

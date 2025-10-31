@@ -19,8 +19,8 @@
     
     /* Multi-layered glow effects */
     box-shadow: 
-        0 0 0 1px rgba(0, 255, 65, 0.4),
-        0 0 20px rgba(0, 255, 65, 0.2),
+        0 0 0 1px rgba(255, 105, 180, 0.4),
+        0 0 20px rgba(255, 105, 180, 0.2),
         0 8px 25px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     
@@ -31,9 +31,9 @@
     .input-box:focus-within {
         outline: none;
         box-shadow: 
-            0 0 0 1px rgba(0, 255, 65, 0.8),
-            0 0 30px rgba(0, 255, 65, 0.4),
-            0 0 60px rgba(0, 255, 65, 0.1),
+            0 0 0 1px rgba(255, 105, 180, 0.8),
+            0 0 30px rgba(255, 105, 180, 0.4),
+            0 0 60px rgba(255, 105, 180, 0.1),
             0 8px 25px rgba(0, 0, 0, 0.3),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
         transform: translateY(-2px);
@@ -78,17 +78,17 @@ textarea::placeholder {
 .tool-icon {
     width: 1.25rem;
     height: 1.25rem;
-    filter: drop-shadow(0 0 5px rgba(0, 255, 65, 0.3));
+    filter: drop-shadow(0 0 5px rgba(255, 105, 180, 0.3));
     transition: all 0.3s ease;
 }
 
 .send-button {
-    color: var(--send-button-color, #00ff41);
+    color: var(--send-button-color, #FFC0CB);
     margin-left: auto;
     padding: 0.5rem;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(0, 255, 65, 0.1), rgba(0, 255, 65, 0.2));
-    border: 1px solid rgba(0, 255, 65, 0.3);
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(255, 105, 180, 0.2));
+    border: 1px solid rgba(255, 105, 180, 0.3);
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
@@ -102,19 +102,19 @@ textarea::placeholder {
     left: 50%;
     width: 0;
     height: 0;
-    background: radial-gradient(circle, rgba(0, 255, 65, 0.4) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.4) 0%, transparent 70%);
     transition: all 0.3s ease;
     border-radius: 50%;
     transform: translate(-50%, -50%);
 }
 
 .send-button:hover {
-    color: #00ff41;
-    background: linear-gradient(135deg, rgba(0, 255, 65, 0.2), rgba(0, 255, 65, 0.4));
-    border-color: rgba(0, 255, 65, 0.6);
+    color: #FFC0CB;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(255, 105, 180, 0.4));
+    border-color: rgba(255, 105, 180, 0.6);
     box-shadow: 
-        0 0 20px rgba(0, 255, 65, 0.4),
-        inset 0 0 10px rgba(0, 255, 65, 0.1);
+        0 0 20px rgba(255, 105, 180, 0.4),
+        inset 0 0 10px rgba(255, 105, 180, 0.1);
     transform: scale(1.1);
 }
 
@@ -128,8 +128,8 @@ textarea::placeholder {
 }
 
 .attach {
-    background: linear-gradient(135deg, rgba(0, 255, 65, 0.05), rgba(0, 255, 65, 0.1));
-    border: 2px dashed rgba(0, 255, 65, 0.3);
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.05), rgba(255, 105, 180, 0.1));
+    border: 2px dashed rgba(255, 105, 180, 0.3);
     color: rgba(255, 255, 255, 0.7);
     padding: 0.5rem 1rem;
     border-radius: 8px;
@@ -139,9 +139,9 @@ textarea::placeholder {
 }
 
 .attach:hover {
-    background: linear-gradient(135deg, rgba(0, 255, 65, 0.1), rgba(0, 255, 65, 0.2));
-    border-color: rgba(0, 255, 65, 0.5);
-    color: #00ff41;
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(255, 105, 180, 0.2));
+    border-color: rgba(255, 105, 180, 0.5);
+    color: #FFC0CB;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
     transform: translateY(-1px);
 }

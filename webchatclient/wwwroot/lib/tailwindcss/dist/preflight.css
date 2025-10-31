@@ -126,7 +126,7 @@ pre {
     Monaco,
     Consolas,
     'Liberation Mono',
-    'Courier New',
+    'Segoe UI',
     monospace
   ); /* 4 */
   font-feature-settings: var(--default-mono-font-feature-settings, normal); /* 5 */

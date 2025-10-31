@@ -6,7 +6,7 @@
     border-radius: 8px;
     color: #ffffff;
     white-space: pre-wrap;
-    font-family: 'Courier New', monospace;
+    font-family: 'Segoe UI', monospace;
     font-size: 1.7em;
     font-weight: 400;
     position: relative;
@@ -107,17 +107,18 @@
 .assistant-message, .assistant-search {
     display: grid;
     grid-template-rows: min-content;
-    grid-template-columns: 2rem minmax(0, 1fr);
+    /* Make first column wide enough for a 48px avatar so icon and header align */
+    grid-template-columns: 3rem minmax(0, 1fr);
     gap: 0.25rem;
     
     /* Cool styling effects */
     position: relative;
     padding: 1rem;
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-    border: 1px solid #00ff41;
+    border: 1px solid #FFC0CB;
     border-radius: 8px;
     box-shadow: 
-        0 0 20px rgba(0, 255, 65, 0.3),
+        0 0 20px rgba(255, 105, 180, 0.3),
         0 4px 15px rgba(0, 0, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     
@@ -131,17 +132,17 @@
 @keyframes matrixPulse {
     0%, 100% {
         box-shadow: 
-            0 0 20px rgba(0, 255, 65, 0.3),
+            0 0 20px rgba(255, 105, 180, 0.3),
             0 4px 15px rgba(0, 0, 0, 0.4),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        border-color: #00ff41;
+        border-color: #FFC0CB;
     }
     50% {
         box-shadow: 
-            0 0 30px rgba(0, 255, 65, 0.6),
+            0 0 30px rgba(255, 105, 180, 0.6),
             0 6px 20px rgba(0, 0, 0, 0.6),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        border-color: #00ff88;
+        border-color: #FF1493;
     }
 }
 
@@ -152,7 +153,7 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #00ff41, #00aa2e, #00ff41, #00aa2e);
+    background: linear-gradient(45deg, #FFC0CB, #FF1493, #FFC0CB, #FF1493);
     background-size: 400% 400%;
     border-radius: 10px;
     z-index: -1;
@@ -170,9 +171,9 @@
 
 .assistant-message-text {
     grid-column-start: 2;
-    color: #00ff41;
-    text-shadow: 0 0 10px rgba(0, 255, 65, 0.7);
-    font-family: 'Courier New', monospace;
+    color: #FFC0CB;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+    font-family: 'Segoe UI', monospace;
     font-size: 1.7em;
     line-height: 1.6;
     
@@ -182,45 +183,63 @@
 
 @keyframes matrixText {
     0% { opacity: 0.8; }
-    50% { opacity: 1; text-shadow: 0 0 15px rgba(0, 255, 65, 0.9); }
+    50% { opacity: 1; text-shadow: 0 0 15px rgba(255, 105, 180, 0.9); }
     100% { opacity: 0.95; }
 }
 
 .assistant-message-icon {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    border-radius: 9999px; 
-    width: 1.5rem; 
-    height: 1.5rem; 
-    color: #00ff41; 
-    background: radial-gradient(circle, #001100 0%, #003300 50%, #001100 100%);
-    border: 2px solid #00ff41;
-    box-shadow: 
-        0 0 15px rgba(0, 255, 65, 0.6),
-        inset 0 0 10px rgba(0, 255, 65, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem; /* ~48px */
+    height: 3rem;
+    padding: 0;
+    border-radius: 6px;
+    /* Remove colored background so the SVG appears without a block behind it */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    /* keep the subtle color pulse via glow only (animation uses SVG palette) */
     animation: iconPulse 2s ease-in-out infinite;
+    /* Align the icon with the top of the message so it lines up with header text */
+    align-self: start;
 }
 
 @keyframes iconPulse {
     0%, 100% {
         transform: scale(1);
-        box-shadow: 
-            0 0 15px rgba(0, 255, 65, 0.6),
-            inset 0 0 10px rgba(0, 255, 65, 0.2);
+        box-shadow:
+            0 0 10px rgba(20,77,255,0.6),
+            0 0 18px rgba(195,66,224,0.45),
+            inset 0 0 8px rgba(228,92,187,0.18);
     }
     50% {
-        transform: scale(1.1);
-        box-shadow: 
-            0 0 25px rgba(0, 255, 65, 0.8),
-            inset 0 0 15px rgba(0, 255, 65, 0.4);
+        transform: scale(1.06);
+        box-shadow:
+            0 0 18px rgba(20,77,255,0.9),
+            0 0 30px rgba(195,66,224,0.7),
+            inset 0 0 14px rgba(228,92,187,0.28);
     }
 }
 
-    .assistant-message-icon svg {
-        width: 1rem; 
-        height: 1rem; 
+    .assistant-message-icon svg,
+    .assistant-message-icon img {
+        width: 2.25rem; /* slightly smaller than container so it doesn't look boxed */
+        height: auto;
+        display: block;
+        border-radius: 0; /* no rounded colored background */
+        object-fit: contain;
+        background: transparent !important;
     }
+
+.assistant-message-header {
+    font-weight: 600;
+    /* Make text slightly larger and set line-height to match the icon container (3rem) */
+    font-size: 1.125rem; /* ~18px */
+    line-height: 3rem; /* matches .assistant-message-icon height */
+    align-self: start;
+    margin-left: 0.25rem;
+}
 
 .assistant-search {
     font-size: 0.875rem;
@@ -257,8 +276,8 @@
     right: 0;
     bottom: 0;
     background: 
-        linear-gradient(90deg, transparent 98%, rgba(0, 255, 65, 0.03) 100%),
-        linear-gradient(180deg, transparent 98%, rgba(0, 255, 65, 0.03) 100%);
+        linear-gradient(90deg, transparent 98%, rgba(255, 105, 180, 0.03) 100%),
+        linear-gradient(180deg, transparent 98%, rgba(255, 105, 180, 0.03) 100%);
     background-size: 20px 20px;
     pointer-events: none;
     animation: matrixRain 8s linear infinite;
@@ -304,32 +323,32 @@
 ::deep ul {
     list-style-type: disc;
     margin-left: 1.5rem;
-    color: #00cc33;
+    color: #FF1493;
 }
 
 ::deep ol {
     list-style-type: decimal;
     margin-left: 1.5rem;
-    color: #00cc33;
+    color: #FF1493;
 }
 
 ::deep li {
     margin: 0.5rem 0;
-    text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
 }
 
 ::deep strong {
     font-weight: 600;
-    color: #00ff55;
-    text-shadow: 0 0 8px rgba(0, 255, 85, 0.5);
+    color: #FF69B4;
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
 }
 
 ::deep h3 {
     margin: 1rem 0;
     font-weight: 600;
-    color: #00ff41;
-    text-shadow: 0 0 12px rgba(0, 255, 65, 0.7);
-    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+    color: #FFC0CB;
+    text-shadow: 0 0 12px rgba(255, 105, 180, 0.7);
+    border-bottom: 1px solid rgba(255, 105, 180, 0.3);
     padding-bottom: 0.25rem;
 }
 
@@ -339,54 +358,54 @@
 
 ::deep table {
     margin: 1rem 0;
-    border: 1px solid rgba(0, 255, 65, 0.3);
+    border: 1px solid rgba(255, 105, 180, 0.3);
     border-radius: 4px;
     overflow: hidden;
 }
 
 ::deep th {
     text-align: left;
-    border-bottom: 1px solid rgba(0, 255, 65, 0.5);
-    background: rgba(0, 255, 65, 0.1);
-    color: #00ff41;
-    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    border-bottom: 1px solid rgba(255, 105, 180, 0.5);
+    background: rgba(255, 105, 180, 0.1);
+    color: #FFC0CB;
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
 }
 
 ::deep th, ::deep td {
     padding: 0.1rem 0.5rem;
-    border-right: 1px solid rgba(0, 255, 65, 0.2);
+    border-right: 1px solid rgba(255, 105, 180, 0.2);
 }
 
 ::deep td {
-    border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+    border-bottom: 1px solid rgba(255, 105, 180, 0.1);
 }
 
 ::deep tr:nth-child(even) {
-    background-color: rgba(0, 255, 65, 0.05);
+    background-color: rgba(255, 105, 180, 0.05);
 }
 
 ::deep pre > code {
-    background: linear-gradient(135deg, #001100 0%, #002200 50%, #001100 100%);
-    color: #00ff41;
-    border: 1px solid rgba(0, 255, 65, 0.3);
+    background: linear-gradient(135deg, #1a0520 0%, #2a0840 50%, #1a0520 100%);
+    color: #FFC0CB;
+    border: 1px solid rgba(255, 105, 180, 0.3);
     border-radius: 4px;
     display: block;
     padding: 0.5rem 1rem;
     margin: 1rem 0;
     overflow-x: auto;
-    font-family: 'Courier New', monospace;
-    text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
-    box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.1);
+    font-family: 'Segoe UI', monospace;
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
+    box-shadow: inset 0 0 10px rgba(255, 105, 180, 0.1);
 }
 
 /* Adaptive Card Styles */
 .adaptive-card-container {
     margin: 1rem 0;
-    border: 1px solid #00ff41;
+    border: 1px solid #FFC0CB;
     border-radius: 8px;
-    background: linear-gradient(135deg, #0f2f0f 0%, #1a3e1a 50%, #255025 100%);
+    background: linear-gradient(135deg, #2f0f3f 0%, #3e1a5e 50%, #4a2570 100%);
     box-shadow: 
-        0 0 20px rgba(0, 255, 65, 0.3),
+        0 0 20px rgba(255, 105, 180, 0.3),
         0 4px 15px rgba(0, 0, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     overflow: hidden;
@@ -397,17 +416,17 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
-    background: rgba(0, 255, 65, 0.1);
-    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
-    color: #00ff41;
+    background: rgba(255, 105, 180, 0.1);
+    border-bottom: 1px solid rgba(255, 105, 180, 0.3);
+    color: #FFC0CB;
     font-weight: 600;
-    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
 }
 
 .adaptive-card-icon {
     width: 1.2rem;
     height: 1.2rem;
-    filter: drop-shadow(0 0 3px rgba(0, 255, 65, 0.7));
+    filter: drop-shadow(0 0 3px rgba(255, 105, 180, 0.7));
 }
 
 .adaptive-card-content {
@@ -417,20 +436,20 @@
 
 .adaptive-card-content pre {
     background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(0, 255, 65, 0.2);
+    border: 1px solid rgba(255, 105, 180, 0.2);
     border-radius: 4px;
     padding: 0.75rem;
     margin: 0.5rem 0;
     overflow-x: auto;
-    font-family: 'Courier New', monospace;
+    font-family: 'Segoe UI', monospace;
     font-size: 0.85rem;
-    color: #00ff41;
-    text-shadow: 0 0 3px rgba(0, 255, 65, 0.3);
+    color: #FFC0CB;
+    text-shadow: 0 0 3px rgba(255, 105, 180, 0.3);
 }
 
 .adaptive-card-content code {
-    color: #00ff41;
-    text-shadow: 0 0 3px rgba(0, 255, 65, 0.3);
+    color: #FFC0CB;
+    text-shadow: 0 0 3px rgba(255, 105, 180, 0.3);
 }
 
 .adaptive-card-content em {
@@ -480,7 +499,7 @@
 
 .connection-card-content {
     color: #ffffff;
-    font-family: 'Courier New', monospace;
+    font-family: 'Segoe UI', monospace;
 }
 
 .connection-header h3 {
@@ -539,10 +558,10 @@
 }
 
 .service-capabilities li {
-    color: #00ff41;
-    font-family: 'Courier New', monospace;
+    color: #FFC0CB;
+    font-family: 'Segoe UI', monospace;
     font-size: 0.85rem;
-    text-shadow: 0 0 3px rgba(0, 255, 65, 0.3);
+    text-shadow: 0 0 3px rgba(255, 105, 180, 0.3);
     margin: 0.25rem 0;
 }
 
@@ -581,7 +600,7 @@
 .connection-btn {
     padding: 0.5rem 1.5rem;
     border-radius: 6px;
-    font-family: 'Courier New', monospace;
+    font-family: 'Segoe UI', monospace;
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
@@ -592,15 +611,15 @@
 }
 
 .allow-btn {
-    background: linear-gradient(135deg, #00aa2e 0%, #00ff41 100%);
+    background: linear-gradient(135deg, #FF1493 0%, #FFC0CB 100%);
     color: #000000;
-    border-color: #00ff41;
+    border-color: #FFC0CB;
 }
 
 .allow-btn:hover {
-    background: linear-gradient(135deg, #00cc33 0%, #00ff55 100%);
+    background: linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%);
     box-shadow: 
-        0 0 15px rgba(0, 255, 65, 0.6),
+        0 0 15px rgba(255, 105, 180, 0.6),
         0 4px 12px rgba(0, 0, 0, 0.4);
     transform: translateY(-2px);
 }
@@ -697,10 +716,10 @@
 }
 
 .dataverse-connection-card .capabilities p:not(:first-child) {
-    color: #00ff41;
-    font-family: 'Courier New', monospace;
+    color: #FFC0CB;
+    font-family: 'Segoe UI', monospace;
     font-size: 0.9rem;
-    text-shadow: 0 0 3px rgba(0, 255, 65, 0.3);
+    text-shadow: 0 0 3px rgba(255, 105, 180, 0.3);
     padding-left: 1rem;
 }
 

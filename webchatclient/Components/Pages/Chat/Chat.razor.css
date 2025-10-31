@@ -6,3 +6,27 @@
     /* No background - let it float */
     background: transparent;
 }
+
+/* Styles for the no-messages header in Chat.razor */
+.no-messages-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.no-messages-title {
+    /* Match the SVG's primary gradient colors */
+    background: linear-gradient(90deg, #144dff 0%, #c342e0 50%, #e45cbb 78%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* Use Segoe UI for the title, with sensible fallbacks */
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+    /* Reset global "neon" styles that were leaking in */
+    text-shadow: none !important;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+    font-variant: normal !important;
+}
