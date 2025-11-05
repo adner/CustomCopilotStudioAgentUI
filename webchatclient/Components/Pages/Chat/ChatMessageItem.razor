@@ -474,7 +474,7 @@ else if (Message.Role == ChatRole.Assistant)
                     if (bodyItem.TryGetProperty("text", out var textElement))
                     {
                         var text = textElement.GetString();
-                        if (text != null && text.Contains("Dataverse MCP Server"))
+                        if (text != null && text.Contains("cr5ec_agent"))
                         {
                             return true;
                         }

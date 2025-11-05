@@ -272,7 +272,7 @@
 </head>
 <body>
     <div class="sudoku-container" id="sudoku-game">
-        <div class="sudoku-title">◉ MATRIX SUDOKU ◉</div>
+        <div class="sudoku-title">◉ PPCS SUDOKU ◉</div>
     </div>
 
     <script>
@@ -489,7 +489,7 @@
             }
 
             newGame() {
-                this.container.innerHTML = '<div class="sudoku-title">◉ MATRIX SUDOKU ◉</div>';
+                this.container.innerHTML = '<div class="sudoku-title">◉ PPCS SUDOKU ◉</div>';
                 this.board = this.generateSolvedBoard();
                 this.puzzle = this.createPuzzle(this.board);
                 this.solution = JSON.parse(JSON.stringify(this.board));
